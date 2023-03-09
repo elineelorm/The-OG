@@ -25,11 +25,6 @@ const analytics = getAnalytics(app);
 // Initialize Firebase Cloud Messaging and get a reference to the service
 const messaging = getMessaging(app);
 
-getToken(messaging, {
-    vapidKey: "BLfNwRYQKXcFixJOZ1ycv9mtc4l_g4tShgS6Gqdr2bSnHVrp5oiUMxeVdH9QqCB5yc1qNcRxUGhDCqNCisrQeuI"
-});
-
-
 
 // Request permission for notifications
 function requestPermission() {
@@ -55,3 +50,36 @@ function requestPermission() {
   }
   
   requestPermission();
+
+
+//   // Set up a listener for new values added to the database
+// onValue(ref(database, "/test"), (snapshot) => {
+//   const data = snapshot.val();
+//   console.log("New notification added: ", data);
+
+//   // Send the notification
+//   // const sendNotification = firebase.functions().httpsCallable("sendNotification");
+//   const sendNotification = httpsCallable(getFunctions(), "sendNotification");
+//   // sendNotification({ message: data.message })
+//   //   .then((result) => {
+//   //     console.log(result);
+//   //   })
+//   //   .catch((error) => {
+//   //     console.error(error);
+//   //   });
+//      sendNotification({})
+//      console.log("test");
+//     // sendNotification({ message: data.message })
+//     // .then((result) => {
+//     //   console.log(result);
+//     //   // Show the notification
+//     //   const notificationOptions = {
+//     //     body: data.message,
+//     //     icon: "<PATH_TO_ICON_FILE>"
+//     //   };
+//     //   new Notification("New message", notificationOptions);
+//     // })
+//     // .catch((error) => {
+//     //   console.error(error);
+//     // });
+// });

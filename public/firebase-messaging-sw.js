@@ -26,14 +26,14 @@ const messaging = firebase.messaging(); */
  // https://firebase.google.com/docs/web/setup#config-object
 
  firebase.initializeApp({
-    apiKey: "AIzaSyB_Agu_4g-qA9drarU7jiChC3NAyUKcj30",
-    authDomain: "the-og-27e6f.firebaseapp.com",
-    databaseURL: "https://the-og-27e6f-default-rtdb.firebaseio.com",
-    projectId: "the-og-27e6f",
-    storageBucket: "the-og-27e6f.appspot.com",
-    messagingSenderId: "729039730771",
-    appId: "1:729039730771:web:8e406b1191c9ddbf1f2ea6",
-    measurementId: "G-STFG704HHW",
+  apiKey: "AIzaSyB_Agu_4g-qA9drarU7jiChC3NAyUKcj30",
+  authDomain: "the-og-27e6f.firebaseapp.com",
+  databaseURL: "https://the-og-27e6f-default-rtdb.firebaseio.com",
+  projectId: "the-og-27e6f",
+  storageBucket: "the-og-27e6f.appspot.com",
+  messagingSenderId: "729039730771",
+  appId: "1:729039730771:web:7509c1990d2a5e231f2ea6",
+  measurementId: "G-Z9QZTQV050"
  });
  
  // Retrieve an instance of Firebase Messaging so that it can handle background
