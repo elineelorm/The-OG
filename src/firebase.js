@@ -1,7 +1,11 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
 import { getMessaging, getToken } from "firebase/messaging";
+import { getAuth } from "firebase/auth";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { httpsCallable, getFunctions } from "firebase/functions";
 
 
 
@@ -19,8 +23,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const analytics = getAnalytics(app);
+  const database = getDatabase(app);
+  const db = getFirestore(app);
+
+
 
 // Initialize Firebase Cloud Messaging and get a reference to the service
 const messaging = getMessaging(app);
@@ -52,34 +61,36 @@ function requestPermission() {
   requestPermission();
 
 
-//   // Set up a listener for new values added to the database
-// onValue(ref(database, "/test"), (snapshot) => {
-//   const data = snapshot.val();
-//   console.log("New notification added: ", data);
+  // Set up a listener for new values added to the database
+onValue(ref(database, "/test"), (snapshot) => {
+  const data = snapshot.val();
+  console.log("New notification added: ", data);
 
-//   // Send the notification
-//   // const sendNotification = firebase.functions().httpsCallable("sendNotification");
-//   const sendNotification = httpsCallable(getFunctions(), "sendNotification");
-//   // sendNotification({ message: data.message })
-//   //   .then((result) => {
-//   //     console.log(result);
-//   //   })
-//   //   .catch((error) => {
-//   //     console.error(error);
-//   //   });
-//      sendNotification({})
-//      console.log("test");
-//     // sendNotification({ message: data.message })
-//     // .then((result) => {
-//     //   console.log(result);
-//     //   // Show the notification
-//     //   const notificationOptions = {
-//     //     body: data.message,
-//     //     icon: "<PATH_TO_ICON_FILE>"
-//     //   };
-//     //   new Notification("New message", notificationOptions);
-//     // })
-//     // .catch((error) => {
-//     //   console.error(error);
-//     // });
-// });
+  // Send the notification
+  // const sendNotification = firebase.functions().httpsCallable("sendNotification");
+  const sendNotification = httpsCallable(getFunctions(), "sendNotification");
+  // sendNotification({ message: data.message })
+  //   .then((result) => {
+  //     console.log(result);
+  //   })
+  //   .catch((error) => {
+  //     console.error(error);
+  //   });
+     sendNotification({})
+     console.log("test");
+    // sendNotification({ message: data.message })
+    // .then((result) => {
+    //   console.log(result);
+    //   // Show the notification
+    //   const notificationOptions = {
+    //     body: data.message,
+    //     icon: "<PATH_TO_ICON_FILE>"
+    //   };
+    //   new Notification("New message", notificationOptions);
+    // })
+    // .catch((error) => {
+    //   console.error(error);
+    // });
+});
+
+export { auth, app, database, db};

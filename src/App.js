@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import { useEffect, useState } from 'react';
-//import { app } from './firebase';
+import { auth } from './firebase';
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -10,7 +10,7 @@ import {
 } from 'firebase/auth';
 
 function App() {
-  const auth = getAuth();
+  //const auth = getAuth();
   const [data, setData] = useState({
     email: '',
     password: ''
@@ -62,4 +62,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

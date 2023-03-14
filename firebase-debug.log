@@ -1,0 +1,280 @@
+[debug] [2023-03-14T06:39:42.943Z] ----------------------------------------------------------------------
+[debug] [2023-03-14T06:39:42.949Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Eline\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2023-03-14T06:39:42.951Z] CLI Version:   11.24.1
+[debug] [2023-03-14T06:39:42.951Z] Platform:      win32
+[debug] [2023-03-14T06:39:42.952Z] Node Version:  v16.16.0
+[debug] [2023-03-14T06:39:42.957Z] Time:          Tue Mar 14 2023 02:39:42 GMT-0400 (Eastern Daylight Saving Time)
+[debug] [2023-03-14T06:39:42.957Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-14T06:39:43.182Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-14T06:39:43.184Z] > authorizing via signed-in user (elinenuviadenu38@gmail.com)
+[debug] [2023-03-14T06:39:43.508Z] openjdk version "17.0.6" 2023-01-17
+
+[debug] [2023-03-14T06:39:43.510Z] OpenJDK Runtime Environment Temurin-17.0.6+10 (build 17.0.6+10)
+OpenJDK 64-Bit Server VM Temurin-17.0.6+10 (build 17.0.6+10, mixed mode, sharing)
+
+[debug] [2023-03-14T06:39:43.544Z] Parsed Java major version: 17
+[info] i  emulators: Starting emulators: auth, functions, firestore, database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, database, hosting"}}
+[debug] [2023-03-14T06:39:43.602Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.603Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.603Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.603Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.604Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.605Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.607Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-03-14T06:39:43.632Z] [hub] writing locator at C:\Users\Eline\AppData\Local\Temp\hub-the-og-27e6f.json
+[debug] [2023-03-14T06:39:43.662Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.663Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-03-14T06:39:43.663Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mpubsub, storage\u001b[22m"}}
+[debug] [2023-03-14T06:39:43.679Z] defaultcredentials: writing to file C:\Users\Eline\AppData\Roaming\firebase\elinenuviadenu38_gmail_com_application_default_credentials.json
+[debug] [2023-03-14T06:39:43.687Z] Setting GAC to C:\Users\Eline\AppData\Roaming\firebase\elinenuviadenu38_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Eline\\AppData\\Roaming\\firebase\\elinenuviadenu38_gmail_com_application_default_credentials.json"}}
+[debug] [2023-03-14T06:39:43.698Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig [none]
+[debug] [2023-03-14T06:39:44.472Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig 200
+[debug] [2023-03-14T06:39:44.473Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig {"projectId":"the-og-27e6f","databaseURL":"https://the-og-27e6f-default-rtdb.firebaseio.com","storageBucket":"the-og-27e6f.appspot.com"}
+[debug] [2023-03-14T06:39:44.542Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T06:39:44.542Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2023-03-14T06:39:44.543Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","C:\\Users\\Eline\\.cache\\firebase\\emulators\\cloud-firestore-emulator-v1.16.0.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","the-og-27e6f","--rules","C:\\Users\\Eline\\Desktop\\the-og\\firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\Eline\\\\.cache\\\\firebase\\\\emulators\\\\cloud-firestore-emulator-v1.16.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"the-og-27e6f\",\"--rules\",\"C:\\\\Users\\\\Eline\\\\Desktop\\\\the-og\\\\firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2023-03-14T06:39:48.541Z] Mar. 14, 2023 2:39:48 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 2:39:48 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\r\nINFO: Started WebSocket server on ws://127.0.0.1:9150\r\n"}}
+[debug] [2023-03-14T06:39:48.642Z] API endpoint: http://127.0.0.1:8080 {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://127.0.0.1:8080"}}
+[debug] [2023-03-14T06:39:48.643Z] 
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\r\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\r\n"}}
+[info] +  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2023-03-14T06:39:48.836Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f [none]
+[debug] [2023-03-14T06:39:48.943Z] Mar. 14, 2023 2:39:48 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 2:39:48 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\r\nINFO: Connected to new websocket client\r\n"}}
+[debug] [2023-03-14T06:39:49.478Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f 200
+[debug] [2023-03-14T06:39:49.478Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f {"projectId":"the-og-27e6f","projectNumber":"729039730771","displayName":"THE-OG","name":"projects/the-og-27e6f","resources":{"hostingSite":"the-og-27e6f","realtimeDatabaseInstance":"the-og-27e6f-default-rtdb"},"state":"ACTIVE","etag":"1_02fdf3ea-2551-4a21-91e2-dc7a004d8d8c"}
+[debug] [2023-03-14T06:39:49.479Z] database rules config:  [{"instance":"the-og-27e6f-default-rtdb","rules":"C:\\Users\\Eline\\Desktop\\the-og\\database.rules.json"}]
+[debug] [2023-03-14T06:39:49.489Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-03-14T06:39:49.489Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T06:39:49.490Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2023-03-14T06:39:49.490Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","C:\\Users\\Eline\\.cache\\firebase\\emulators\\firebase-database-emulator-v4.11.0.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning","--functions_emulator_host","127.0.0.1","--functions_emulator_port",5001],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"C:\\\\Users\\\\Eline\\\\.cache\\\\firebase\\\\emulators\\\\firebase-database-emulator-v4.11.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\",\"--functions_emulator_host\",\"127.0.0.1\",\"--functions_emulator_port\",5001],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2023-03-14T06:39:53.430Z] 02:39:53.426 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"02:39:53.426 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\r\n"}}
+[debug] [2023-03-14T06:39:54.247Z] 02:39:54.247 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"02:39:54.247 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\r\n"}}
+[debug] [2023-03-14T06:40:15.326Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 
+[debug] [2023-03-14T06:40:16.004Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 200
+[debug] [2023-03-14T06:40:16.005Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites {"sites":[{"name":"projects/the-og-27e6f/sites/the-og-27e6f","defaultUrl":"https://the-og-27e6f.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-14T06:40:16.007Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/webApps/-/config [none]
+[debug] [2023-03-14T06:40:16.612Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/webApps/-/config 200
+[debug] [2023-03-14T06:40:16.613Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/webApps/-/config {"projectId":"the-og-27e6f","appId":"1:729039730771:web:7509c1990d2a5e231f2ea6","databaseURL":"https://the-og-27e6f-default-rtdb.firebaseio.com","storageBucket":"the-og-27e6f.appspot.com","apiKey":"AIzaSyB_Agu_4g-qA9drarU7jiChC3NAyUKcj30","authDomain":"the-og-27e6f.firebaseapp.com","messagingSenderId":"729039730771","measurementId":"G-Z9QZTQV050"}
+[debug] [2023-03-14T06:40:16.652Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f [none]
+[debug] [2023-03-14T06:40:17.025Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f 200
+[debug] [2023-03-14T06:40:17.026Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f {"projectId":"the-og-27e6f","projectNumber":"729039730771","displayName":"THE-OG","name":"projects/the-og-27e6f","resources":{"hostingSite":"the-og-27e6f","realtimeDatabaseInstance":"the-og-27e6f-default-rtdb"},"state":"ACTIVE","etag":"1_02fdf3ea-2551-4a21-91e2-dc7a004d8d8c"}
+[info] i  hosting[the-og-27e6f]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] +  hosting[the-og-27e6f]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[debug] [2023-03-14T06:40:17.121Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-03-14T06:40:17.122Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-03-14T06:40:17.122Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\Eline\\.cache\\firebase\\emulators\\ui-v1.11.4\\server\\server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\Eline\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.11.4\\\\server\\\\server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-03-14T06:40:17.679Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-03-14T06:40:17.680Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "C:\Users\Eline\Desktop\the-og\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"C:\\Users\\Eline\\Desktop\\the-og\\functions\" for Cloud Functions..."}}
+[debug] [2023-03-14T06:40:17.722Z] Validating nodejs source
+[debug] [2023-03-14T06:40:23.654Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": "eslint .",
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-google": "^0.14.0",
+    "firebase-functions-test": "^3.0.0"
+  },
+  "private": true
+}
+[debug] [2023-03-14T06:40:23.656Z] Building nodejs source
+[debug] [2023-03-14T06:40:23.658Z] Failed to find version of module node: reached end of search path C:\Users\Eline\Desktop\the-og\functions\node_modules
+[info] +  functions: Using node@16 from host. 
+[debug] [2023-03-14T06:40:23.671Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-03-14T06:40:23.707Z] Found firebase-functions binary at 'C:\Users\Eline\Desktop\the-og\functions\node_modules\.bin\firebase-functions'
+[debug] [2023-03-14T06:40:24.586Z] Serving at port 8745
+
+[debug] [2023-03-14T06:40:26.060Z] Got response from /__/functions.yaml {"endpoints":{"sendNotification":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"eventTrigger":{"eventType":"providers/google.firebase.database/eventTypes/ref.create","eventFilters":{"resource":"projects/_/instances/the-og-27e6f-default-rtdb/refs/test/{name}"},"retry":false},"labels":{},"entryPoint":"sendNotification"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-03-14T06:40:26.078Z] shutdown requested via /__/quitquitquit
+
+[info] +  functions: Loaded functions definitions from source: sendNotification. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: sendNotification."}}
+[debug] [2023-03-14T06:40:26.145Z] addRealtimeDatabaseTrigger[the-og-27e6f-default-rtdb] "{\"name\":\"projects/the-og-27e6f/locations/_/functions/us-central1-sendNotification-0\",\"path\":\"/test/{name}\",\"event\":\"providers/google.firebase.database/eventTypes/ref.create\",\"topic\":\"projects/the-og-27e6f/topics/us-central1-sendNotification-0\"}"
+[debug] [2023-03-14T06:40:26.145Z] >>> [apiv2][query] POST http://127.0.0.1:9000/.settings/functionTriggers.json?ns=the-og-27e6f-default-rtdb [none]
+[debug] [2023-03-14T06:40:26.146Z] >>> [apiv2][body] POST http://127.0.0.1:9000/.settings/functionTriggers.json?ns=the-og-27e6f-default-rtdb "{\"name\":\"projects/the-og-27e6f/locations/_/functions/us-central1-sendNotification-0\",\"path\":\"/test/{name}\",\"event\":\"providers/google.firebase.database/eventTypes/ref.create\",\"topic\":\"projects/the-og-27e6f/topics/us-central1-sendNotification-0\"}"
+[debug] [2023-03-14T06:40:27.266Z] 02:40:27.265 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - the-og-27e6f-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 605ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"02:40:27.265 [NamespaceSystem-akka.actor.default-dispatcher-6] INFO com.firebase.core.namespace.NamespaceActor - the-og-27e6f-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 605ms, init: 0ms\r\n"}}
+[debug] [2023-03-14T06:40:27.585Z] 02:40:27.584 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace the-og-27e6f-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"02:40:27.584 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace the-og-27e6f-default-rtdb status Active to Active\r\n"}}
+[debug] [2023-03-14T06:40:27.657Z] <<< [apiv2][status] POST http://127.0.0.1:9000/.settings/functionTriggers.json?ns=the-og-27e6f-default-rtdb 200
+[debug] [2023-03-14T06:40:27.657Z] <<< [apiv2][body] POST http://127.0.0.1:9000/.settings/functionTriggers.json?ns=the-og-27e6f-default-rtdb {"status":"ok"}
+[info] +  functions[us-central1-sendNotification]: database function initialized. {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mdatabase\u001b[22m function initialized."}}
+[debug] [2023-03-14T06:40:27.664Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=the-og-27e6f-default-rtdb
+[debug] [2023-03-14T06:40:27.664Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n  \"rules\": {\n    \".read\": \"now < 1680667200000\",  // 2023-4-5\n    \".write\": \"now < 1680667200000\",  // 2023-4-5\n  }\n}"
+[debug] [2023-03-14T06:40:27.810Z] 02:40:27.809 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace the-og-27e6f-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"02:40:27.809 [NamespaceSystem-blocking-namespace-operation-dispatcher-7] INFO com.firebase.core.namespace.StateManager - Namespace the-og-27e6f-default-rtdb status Active to Active\r\n"}}
+[debug] [2023-03-14T06:40:27.917Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2023-03-14T06:40:27.918Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Database       │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database  │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-03-14T06:40:45.305Z] Mar. 14, 2023 2:40:45 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 2:40:45 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\r\nINFO: Websocket client disconnected\r\n"}}
+[debug] [2023-03-14T06:40:45.306Z] Mar. 14, 2023 2:40:45 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 2:40:45 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\r\nINFO: Connected to new websocket client\r\n"}}
+[debug] [2023-03-14T06:40:46.944Z] Mar. 14, 2023 2:40:46 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 2:40:46 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\r\nINFO: Websocket client disconnected\r\n"}}
+[debug] [2023-03-14T06:40:47.606Z] Mar. 14, 2023 2:40:47 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 2:40:47 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\r\nINFO: Connected to new websocket client\r\n"}}
+[info] i  hosting: 127.0.0.1 - - [14/Mar/2023:06:40:54 +0000] "GET /%PUBLIC_URL%/manifest.json HTTP/1.1" 500 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Mar/2023:06:40:54 +0000] \"GET /%PUBLIC_URL%/manifest.json HTTP/1.1\" 500 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Mar/2023:06:40:54 +0000] "GET /%PUBLIC_URL%/favicon.ico HTTP/1.1" 500 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Mar/2023:06:40:54 +0000] \"GET /%PUBLIC_URL%/favicon.ico HTTP/1.1\" 500 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36\""}}
+[info] i  hosting: 127.0.0.1 - - [14/Mar/2023:06:41:00 +0000] "GET /%PUBLIC_URL%/manifest.json HTTP/1.1" 500 - "http://127.0.0.1:5000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [14/Mar/2023:06:41:00 +0000] \"GET /%PUBLIC_URL%/manifest.json HTTP/1.1\" 500 - \"http://127.0.0.1:5000/\" \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36\""}}
+[debug] [2023-03-14T07:16:53.326Z] Mar. 14, 2023 3:16:53 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 3:16:53 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\r\nINFO: Websocket client disconnected\r\n"}}
+[debug] [2023-03-14T15:34:48.743Z] Mar. 14, 2023 11:34:48 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 11:34:48 A.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\r\nINFO: Connected to new websocket client\r\n"}}
+[debug] [2023-03-14T15:35:03.250Z] 11:35:03.243 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested 
+namespace the-og-27e6f, but the emulator is configured for the-og-27e6f-default-rtdb. To 
+opt-out of single project mode add/set the single_project_mode: false property in 
+the firebase.json emulators config. 
+ {"metadata":{"emulator":{"name":"database"},"message":"11:35:03.243 [FirebaseWorkerPool-1-4] WARN com.firebase.core.persistence.backend.dummy.EmulatorMetadataPersistence - Multiple projectIds are not recommended in single project mode. Requested \nnamespace the-og-27e6f, but the emulator is configured for the-og-27e6f-default-rtdb. To \nopt-out of single project mode add/set the single_project_mode: false property in \nthe firebase.json emulators config. \r\n"}}
+[debug] [2023-03-14T15:35:03.334Z] 11:35:03.334 [NamespaceSystem-akka.actor.default-dispatcher-16] INFO com.firebase.core.namespace.NamespaceActor - the-og-27e6f successfully activated FBKV (SurveyIdle(0)) wait: 25ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"11:35:03.334 [NamespaceSystem-akka.actor.default-dispatcher-16] INFO com.firebase.core.namespace.NamespaceActor - the-og-27e6f successfully activated FBKV (SurveyIdle(0)) wait: 25ms, init: 0ms\r\n"}}
+[debug] [2023-03-14T15:35:24.036Z] Mar. 14, 2023 11:35:24 A.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 11:35:24 A.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\r\nINFO: Detected non-HTTP/2 connection.\r\n"}}
+[debug] [2023-03-14T15:35:24.430Z] Mar. 14, 2023 11:35:24 A.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 11:35:24 A.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\r\nINFO: Detected HTTP/2 connection.\r\n"}}
+[debug] [2023-03-14T15:45:51.144Z] ----------------------------------------------------------------------
+[debug] [2023-03-14T15:45:51.146Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Eline\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-03-14T15:45:51.147Z] CLI Version:   11.24.1
+[debug] [2023-03-14T15:45:51.147Z] Platform:      win32
+[debug] [2023-03-14T15:45:51.147Z] Node Version:  v16.16.0
+[debug] [2023-03-14T15:45:51.163Z] Time:          Tue Mar 14 2023 11:45:51 GMT-0400 (Eastern Daylight Saving Time)
+[debug] [2023-03-14T15:45:51.163Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-14T15:45:51.454Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-14T15:45:51.455Z] > authorizing via signed-in user (elinenuviadenu38@gmail.com)
+[debug] [2023-03-14T15:45:51.455Z] [iam] checking project the-og-27e6f for permissions ["firebase.projects.get"]
+[debug] [2023-03-14T15:45:51.458Z] > refreshing access token with scopes: []
+[debug] [2023-03-14T15:45:51.463Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-03-14T15:45:51.463Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T15:45:52.655Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-03-14T15:45:52.656Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-03-14T15:45:52.685Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions [none]
+[debug] [2023-03-14T15:45:52.685Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions x-goog-quota-user=projects/the-og-27e6f
+[debug] [2023-03-14T15:45:52.685Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-14T15:45:52.991Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions 200
+[debug] [2023-03-14T15:45:52.991Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-14T15:45:52.993Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f [none]
+[debug] [2023-03-14T15:45:53.265Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f 200
+[debug] [2023-03-14T15:45:53.265Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f {"projectId":"the-og-27e6f","projectNumber":"729039730771","displayName":"THE-OG","name":"projects/the-og-27e6f","resources":{"hostingSite":"the-og-27e6f","realtimeDatabaseInstance":"the-og-27e6f-default-rtdb"},"state":"ACTIVE","etag":"1_02fdf3ea-2551-4a21-91e2-dc7a004d8d8c"}
+[info] 
+[info] === Serving from 'C:\Users\Eline\Desktop\the-og'...
+[info] 
+[debug] [2023-03-14T15:45:53.307Z] defaultcredentials: writing to file C:\Users\Eline\AppData\Roaming\firebase\elinenuviadenu38_gmail_com_application_default_credentials.json
+[debug] [2023-03-14T15:45:53.309Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 
+[debug] [2023-03-14T15:45:53.321Z] Setting GAC to C:\Users\Eline\AppData\Roaming\firebase\elinenuviadenu38_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Eline\\AppData\\Roaming\\firebase\\elinenuviadenu38_gmail_com_application_default_credentials.json"}}
+[debug] [2023-03-14T15:45:53.323Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig [none]
+[debug] [2023-03-14T15:45:53.634Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig 200
+[debug] [2023-03-14T15:45:53.634Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig {"projectId":"the-og-27e6f","databaseURL":"https://the-og-27e6f-default-rtdb.firebaseio.com","storageBucket":"the-og-27e6f.appspot.com"}
+[debug] [2023-03-14T15:45:53.673Z] Error: listen EADDRINUSE: address already in use 127.0.0.1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:1559:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:73:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-03-14T15:45:53.828Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 200
+[debug] [2023-03-14T15:45:53.828Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites {"sites":[{"name":"projects/the-og-27e6f/sites/the-og-27e6f","defaultUrl":"https://the-og-27e6f.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-14T15:45:53.828Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/webApps/-/config [none]
+[debug] [2023-03-14T15:46:06.015Z] ----------------------------------------------------------------------
+[debug] [2023-03-14T15:46:06.017Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Eline\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2023-03-14T15:46:06.018Z] CLI Version:   11.24.1
+[debug] [2023-03-14T15:46:06.018Z] Platform:      win32
+[debug] [2023-03-14T15:46:06.018Z] Node Version:  v16.16.0
+[debug] [2023-03-14T15:46:06.020Z] Time:          Tue Mar 14 2023 11:46:06 GMT-0400 (Eastern Daylight Saving Time)
+[debug] [2023-03-14T15:46:06.020Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-14T15:46:06.181Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-14T15:46:06.182Z] > authorizing via signed-in user (elinenuviadenu38@gmail.com)
+[debug] [2023-03-14T15:46:06.182Z] [iam] checking project the-og-27e6f for permissions ["firebase.projects.get"]
+[debug] [2023-03-14T15:46:06.185Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions [none]
+[debug] [2023-03-14T15:46:06.185Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions x-goog-quota-user=projects/the-og-27e6f
+[debug] [2023-03-14T15:46:06.185Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-14T15:46:06.381Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions 200
+[debug] [2023-03-14T15:46:06.381Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/the-og-27e6f:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-14T15:46:06.382Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f [none]
+[debug] [2023-03-14T15:46:06.645Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f 200
+[debug] [2023-03-14T15:46:06.645Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f {"projectId":"the-og-27e6f","projectNumber":"729039730771","displayName":"THE-OG","name":"projects/the-og-27e6f","resources":{"hostingSite":"the-og-27e6f","realtimeDatabaseInstance":"the-og-27e6f-default-rtdb"},"state":"ACTIVE","etag":"1_02fdf3ea-2551-4a21-91e2-dc7a004d8d8c"}
+[info] 
+[info] === Serving from 'C:\Users\Eline\Desktop\the-og'...
+[info] 
+[debug] [2023-03-14T15:46:06.657Z] defaultcredentials: writing to file C:\Users\Eline\AppData\Roaming\firebase\elinenuviadenu38_gmail_com_application_default_credentials.json
+[debug] [2023-03-14T15:46:06.658Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 
+[debug] [2023-03-14T15:46:06.664Z] Setting GAC to C:\Users\Eline\AppData\Roaming\firebase\elinenuviadenu38_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\Eline\\AppData\\Roaming\\firebase\\elinenuviadenu38_gmail_com_application_default_credentials.json"}}
+[debug] [2023-03-14T15:46:06.666Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig [none]
+[debug] [2023-03-14T15:46:06.988Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig 200
+[debug] [2023-03-14T15:46:06.988Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/adminSdkConfig {"projectId":"the-og-27e6f","databaseURL":"https://the-og-27e6f-default-rtdb.firebaseio.com","storageBucket":"the-og-27e6f.appspot.com"}
+[debug] [2023-03-14T15:46:07.008Z] Error: listen EADDRINUSE: address already in use 127.0.0.1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1372:16)
+    at listenInCluster (node:net:1420:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:1559:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:73:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-03-14T15:46:07.143Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 200
+[debug] [2023-03-14T15:46:07.143Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites {"sites":[{"name":"projects/the-og-27e6f/sites/the-og-27e6f","defaultUrl":"https://the-og-27e6f.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-03-14T15:46:07.144Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/webApps/-/config [none]
