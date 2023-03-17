@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import logo from "../images/the-og-logo.png";
 import history from './History';
-import { Button } from 'react-bootstrap';
 
 
 export default class SignUp extends Component {
+    handleClick() {
+        history.push('/Home');        
+        window.location.reload();
+    }
     render(){
         return (
-            <div className="App-header">
+            <div className="App-body">
               <img src={logo} alt="logo"></img>
               <input
                 placeholder="Name"
@@ -32,11 +35,11 @@ export default class SignUp extends Component {
                 type="password"
                 className="input-fields"
               />
-              <label>
-              <input type="checkbox" />
+              <label class="checkbox-group">
+              <input id="check-box" type="checkbox" checked/>
                 Allow Notifications
               </label>
-              <Button variant="btn" onClick={() => history.push('/Home')}> SignUp </Button>
+              <button class="dark-button" onClick={this.handleClick}> SignUp </button>
             </div>
         );
     }

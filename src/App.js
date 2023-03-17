@@ -48,17 +48,7 @@ function App() {
   // }, [])
   return (
      <div>
-       {/* <Home /> */}
-        {/* <Router> */}
         <Switch />
-        {/* </Router> */}
-      
-      
-
-       {/* <button onClick={addData}>Log In</button> */}
-      
-      
-      {/* <button onClick={handlelogout}>Log out</button> */}
       <Footer />
   
       </div>

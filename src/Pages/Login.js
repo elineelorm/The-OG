@@ -5,16 +5,18 @@ import logo from "../images/the-og-logo.png";
 import { useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import {
-  getAuth,
   signInWithEmailAndPassword,
-  signOut,
   onAuthStateChanged
 } from 'firebase/auth';
 import history from './History';
-import { Button } from 'react-bootstrap';
 
 
 function Login() {
+  const performAction = () => {
+    history.push('/SignUp');
+    window.location.reload();
+  }
+
   const [data, setData] = useState({
     email: '',
     password: ''
@@ -41,7 +43,7 @@ function Login() {
     })
   }, [])
   return (
-    <div className="App-header">
+    <div className="App-body">
       <img src={logo} alt="logo"></img>
       <input
         placeholder="Email"
@@ -57,9 +59,9 @@ function Login() {
         className="input-fields"
         onChange={event => handleInputs(event)}
       />
-      <div class="btn-toolbar" role="toolbar">
-        <Button onClick={addData}>Log In</Button>
-        <Button variant="btn" onClick={() => history.push('/SignUp')}> SignUp </Button>
+      <div class="btn-group">
+        <button onClick={addData}>Log In</button>
+        <button class="dark-button" onClick={() => performAction()}> Sign Up </button>
       </div>
     </div>
   );

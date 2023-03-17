@@ -7,13 +7,7 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+.App-body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -28,11 +22,74 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  border-radius: 30px;
+  font-size: 20px;
+  width: 444px;
+  height: 73px;
+  padding-left: 51px;
+  margin: 5px;
+}
+
+label {
+  font-size: 20px;
+  text-align: center;
+}
+
+#check-box {
+  height: 22px;
+  width: 18px;
+  margin-right: 10px;
+}
+
+/*Login*/
+.checkbox-group {
+  opacity: 84%;
+}
+
+/* Image */
+img {
+  border-radius: 200px;
+  padding: 30px;
+}
+
+.img-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+}
+
+.cooking-pot {
+  width: 416px;
+  height: 338px;
+}
+
+/* Button */
+button {
+  border: solid #eda0a0;
+  border-radius: 30px;
+  font-size: 20px;
+  height: 55px;
+  margin: 20px;
+  width: 193px;
+}
+
+.dark-button {
+  background-color: #eda0a0;
+  color: white;
+  
+}
+
+/* Home-Page */
+.info-display {  
+  border: solid #eda0a0;
+  border-radius: 22px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding-top: 50px;
+  width: 455px;
+  height: 254px;
 }
