@@ -30,10 +30,6 @@ function Login() {
     history.push('/Home')
   }
 
-  const handlelogout = () => {
-    signOut(auth);
-  }
-
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
       if(data){
@@ -61,8 +57,10 @@ function Login() {
         className="input-fields"
         onChange={event => handleInputs(event)}
       />
-      <Button onClick={addData}>Log In</Button>
-      <Button variant="btn" onClick={() => history.push('/SignUp')}> SignUp </Button>
+      <div class="btn-toolbar" role="toolbar">
+        <Button onClick={addData}>Log In</Button>
+        <Button variant="btn" onClick={() => history.push('/SignUp')}> SignUp </Button>
+      </div>
     </div>
   );
 }
