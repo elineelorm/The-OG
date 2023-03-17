@@ -278,3 +278,10 @@ INFO: Detected HTTP/2 connection.
 [debug] [2023-03-14T15:46:07.143Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites 200
 [debug] [2023-03-14T15:46:07.143Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/the-og-27e6f/sites {"sites":[{"name":"projects/the-og-27e6f/sites/the-og-27e6f","defaultUrl":"https://the-og-27e6f.web.app","type":"DEFAULT_SITE"}]}
 [debug] [2023-03-14T15:46:07.144Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/the-og-27e6f/webApps/-/config [none]
+[debug] [2023-03-14T15:58:15.197Z] Mar. 14, 2023 11:58:15 A.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 11:58:15 A.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\r\nINFO: Detected non-HTTP/2 connection.\r\n"}}
+[debug] [2023-03-14T16:11:44.806Z] Mar. 14, 2023 12:11:44 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Mar. 14, 2023 12:11:44 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\r\nINFO: Websocket client disconnected\r\n"}}
+[debug] [2023-03-14T16:11:56.155Z] Received signal SIGHUP 1
