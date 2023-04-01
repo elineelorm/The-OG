@@ -5,37 +5,57 @@ import { auth, database } from '../firebase';
 import { signOut } from 'firebase/auth';
 import history from './History';
 // import { Button } from 'react-bootstrap';
-import { ref, set, get, update, remove, child , onValue} from "firebase/database";
+import { ref, set, get, update, remove, child, onValue } from "firebase/database";
 
 export default class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: '',
             safety: '',
             state: '',
             type: ''
 
         }
     }
-    componentDidMount(){
-        const dbRef = ref(database, '/Users/1/StoveManagement/stoveid/1/dataId/');
-        // const dbRef = ref(database, '/Users/1/StoveManagement');
-        onValue(dbRef, (snapshot) => {
-            const data = snapshot.val();
-            // let dataSets = [];
+    componentDidMount() {
+        const dbRef = ref(database, '/Users/1/StoveManagement/stoveid/2/dataId/');
 
-            // snapshot.forEach(childSnapshot=>{
-            //     let childKey = childSnapshot.key;
-            //     let childValue = childSnapshot.val();
-            //     dataSets.push({"ChildKey" : childKey, "data": childValue});
-            // });
-            // this.setState({dataValues: dataSets});
-            // console.log(this.state.dataValues);
-            const currentDataset = data[2];
-            console.log(currentDataset.Safety);
-            this.setState({safety: currentDataset.Safety, state: currentDataset.State,
-                 type: currentDataset.Type});
+        onValue(dbRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                // let dataSets = [];
+
+                // snapshot.forEach(childSnapshot=>{
+                //     let childKey = childSnapshot.key;
+                //     let childValue = childSnapshot.val();
+                //     dataSets.push({"ChildKey" : childKey, "data": childValue});
+                // });
+                // this.setState({dataValues: dataSets});
+                // console.log(this.state.dataValues);
+
+                let objArray = Object.keys(data);
+                let lastObjId = objArray[objArray.length - 1];
+                const lastObj = data[lastObjId];
+                console.log(data);
+                console.log(objArray);
+
+                console.log(lastObj);
+                const currentDataset = lastObj;
+                console.log(currentDataset);
+                console.log(currentDataset.Safety);
+                this.setState({
+                    id: lastObjId, safety: currentDataset.Safety, state: currentDataset.State,
+                    type: currentDataset.Type
+                });
+            }
+            else{
+                console.log("No data for this user");
+            }
         })
+
+    }
+    handleEmailInput() {
 
     }
     handleClick() {
@@ -52,7 +72,7 @@ export default class Home extends Component {
                         <img className="cooking-pot" src={cookingPot} alt="cooking pot" />
                         <div className="info-display">
                             <h4 className="info-title">Thermal Stove System</h4>
-                            <h5>ID: </h5>
+                            <h5>ID: {this.state.id}</h5>
                             <h6>Status: {this.state.safety}</h6>
                             <h6>Previous Cooking Method: {this.state.type}</h6>
                             <h6>Stove System Check: {this.state.state}</h6>
