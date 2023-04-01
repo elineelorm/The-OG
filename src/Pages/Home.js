@@ -6,6 +6,7 @@ import { signOut } from 'firebase/auth';
 import history from './History';
 // import { Button } from 'react-bootstrap';
 import { ref, set, get, update, remove, child, onValue } from "firebase/database";
+import { validateEmail } from '../utils/helpers';
 
 export default class Home extends Component {
     constructor(props) {
@@ -14,9 +15,13 @@ export default class Home extends Component {
             id: '',
             safety: '',
             state: '',
-            type: ''
+            type: '',
+            addEmail: '',
+            contactId: 1,
+            errorMessage: ''
 
         }
+        this.handleEmailInput = this.handleEmailInput.bind(this);
     }
     componentDidMount() {
         const dbRef = ref(database, '/Users/1/StoveManagement/stoveid/2/dataId/');
@@ -49,16 +54,49 @@ export default class Home extends Component {
                     type: currentDataset.Type
                 });
             }
-            else{
+            else {
                 console.log("No data for this user");
             }
         })
+        const dbRefForContact = ref(database, '/Users/1/Contacts/');
 
-    }
-    handleEmailInput() {
+        onValue(dbRefForContact, (snapshot) => {
+            if (snapshot.exists()) {
+                const contactData = snapshot.val();
 
+                let contactArray = Object.keys(contactData);
+                let lastContactId = contactArray[contactArray.length - 1];
+                let newContactId = Number(lastContactId) + 1;
+                this.setState({
+                    contactId: newContactId
+                });
+            }
+            else {
+                console.log("No contact for this user");
+                this.setState({
+                    contactId: 1
+                });
+            }
+        })
     }
-    handleClick() {
+    emailSubmitClick = (event) => {
+        event.preventDefault();
+        const isValid = validateEmail(this.state.addEmail);
+        if (!isValid) {
+            this.setState({ errorMessage: 'Your email is invalid.' });
+        } else {
+            this.setState({ errorMessage: '' });
+            set(ref(database, '/Users/1/Contacts/' + this.state.contactId), {
+                Email: this.state.addEmail
+            });
+            this.setState({ addEmail: '' });
+        }
+    }
+    handleEmailInput(event) {
+        this.setState({ addEmail: event.target.value });
+        console.log(this.state.addEmail);
+    }
+    handleLogout() {
         signOut(auth);//signout relocated went to a page only with Footer
         history.push('/Login');
         window.location.reload();
@@ -85,11 +123,16 @@ export default class Home extends Component {
                         <form>
                             <div class="form-group">
                                 <label for="new-email">Add Contact</label>
-                                <input type="email" class="" id="new-email" placeholder="Contact Email"></input>
+                                <input type="email" class="" id="new-email" placeholder="Contact Email" value={this.state.addEmail} onChange={this.handleEmailInput} required />
                             </div>
-                            <button type="submit">Add</button>
+                            <button type="submit" onClick={this.emailSubmitClick}>Add</button>
                         </form>
-                        <button class="dark-button" onClick={this.handleClick}>Log out</button>
+                        {this.state.errorMessage && (
+                            <div>
+                                <p>{this.state.errorMessage}</p>
+                            </div>
+                        )}
+                        <button class="dark-button" onClick={this.handleLogout}>Log out</button>
                     </div>
                 </div>
 
