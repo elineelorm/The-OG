@@ -18,47 +18,45 @@ export default class Home extends Component {
             type: '',
             addEmail: '',
             contactId: 1,
-            errorMessage: ''
+            errorMessage: '',
+            userId: 1,
+            dataMessage: ''
 
         }
         this.handleEmailInput = this.handleEmailInput.bind(this);
     }
     componentDidMount() {
-        const dbRef = ref(database, '/Users/1/StoveManagement/stoveid/2/dataId/');
+        const dbAdminRef = ref(database, '/Admin/');
 
-        onValue(dbRef, (snapshot) => {
+        onValue(dbAdminRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                // let dataSets = [];
-
-                // snapshot.forEach(childSnapshot=>{
-                //     let childKey = childSnapshot.key;
-                //     let childValue = childSnapshot.val();
-                //     dataSets.push({"ChildKey" : childKey, "data": childValue});
-                // });
-                // this.setState({dataValues: dataSets});
-                // console.log(this.state.dataValues);
-
-                let objArray = Object.keys(data);
-                let lastObjId = objArray[objArray.length - 1];
-                const lastObj = data[lastObjId];
                 console.log(data);
-                console.log(objArray);
-
-                console.log(lastObj);
-                const currentDataset = lastObj;
-                console.log(currentDataset);
-                console.log(currentDataset.Safety);
                 this.setState({
-                    id: lastObjId, safety: currentDataset.Safety, state: currentDataset.State,
-                    type: currentDataset.Type
+                    userId: data.currentUserId
                 });
             }
             else {
-                console.log("No data for this user");
+                console.log("No current user");
+            }
+        }) 
+        
+        const dbRef = ref(database, '/Users/' + this.state.userId + '/StoveManagement/');
+        console.log(this.state.userId);
+        onValue(dbRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                console.log(data);
+                this.setState({
+                    id: data.stoveId, safety: data.Safety, state: data.State,
+                    type: data.Type
+                });
+            }
+            else {
+                this.setState({ dataMessage: 'No stove data at the moment!' });
             }
         })
-        const dbRefForContact = ref(database, '/Users/1/Contacts/');
+        const dbRefForContact = ref(database, '/Users/' + this.state.userId + '/Contacts/');
 
         onValue(dbRefForContact, (snapshot) => {
             if (snapshot.exists()) {
@@ -86,8 +84,11 @@ export default class Home extends Component {
             this.setState({ errorMessage: 'Your email is invalid.' });
         } else {
             this.setState({ errorMessage: '' });
-            set(ref(database, '/Users/1/Contacts/' + this.state.contactId), {
+            set(ref(database, '/Users/' + this.state.userId + '/Contacts/' + this.state.contactId + "/"), {
                 Email: this.state.addEmail
+            });
+            this.setState({
+                contactId: Number(this.state.contactId) + 1
             });
             this.setState({ addEmail: '' });
         }
@@ -97,8 +98,11 @@ export default class Home extends Component {
         console.log(this.state.addEmail);
     }
     handleLogout() {
-        signOut(auth);//signout relocated went to a page only with Footer
-        history.push('/Login');
+        // signOut(auth);
+        set(ref(database, '/Admin/'), {
+            currentUserId: 0
+        });
+        history.push('/');
         window.location.reload();
     }
     render() {
@@ -110,10 +114,14 @@ export default class Home extends Component {
                         <img className="cooking-pot" src={cookingPot} alt="cooking pot" />
                         <div className="info-display">
                             <h4 className="info-title">Thermal Stove System</h4>
-                            <h5>ID: {this.state.id}</h5>
+                            <h5>Stove ID: {this.state.id}</h5>
                             <h6>Status: {this.state.safety}</h6>
                             <h6>Previous Cooking Method: {this.state.type}</h6>
                             <h6>Stove System Check: {this.state.state}</h6>
+                            {this.state.dataMessage && (
+                                <h3>{this.state.dataMessage}</h3>
+
+                            )}
                         </div>
                     </div>
                     {/* <div class="d-flex" style={{height: "527px", color: "white"}}>

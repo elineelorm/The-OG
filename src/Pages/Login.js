@@ -3,13 +3,13 @@ import React from "react";
 import "../App.css";
 import logo from "../images/the-og-logo.png";
 import { useEffect, useState } from 'react';
-import { auth } from '../firebase';
+import { auth, database } from '../firebase';
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged
 } from 'firebase/auth';
 import history from './History';
-
+import { ref, set, onValue } from "firebase/database";
 
 function Login() {
   const performAction = () => {
@@ -21,20 +21,71 @@ function Login() {
     email: '',
     password: ''
   })
-  const handleInputs = (event) => {
-    let inputs = { [event.target.name]: event.target.value }
+  const [userId, setUserId] = useState(0);
+  const [userLogin, setUserLogin] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-    setData({ ...data, ...inputs })
+  function checkUserLogin(dataObj) {
+    const { email, password } = dataObj;
+    console.log(email);
+    const dbuserRef = ref(database, 'Users/');
+    onValue(dbuserRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        let userIdArray = Object.keys(data);
+
+        for (let index of userIdArray) {
+          if (data[index].Email === email) {
+            console.log("In for loop");
+            if (data[index].Password === password) {
+              setUserLogin(true);
+              setUserId(Number(index));
+              console.log("In for loop true");
+              break;
+            }
+            else {
+              setErrorMessage(`Password incorrect!`);
+              console.log("In for loop wrong");
+            }
+            break;
+          } else {
+            setErrorMessage(`No such user!`);
+          }
+        }
+      }
+      else {
+        console.log("No users");
+        setErrorMessage(`No user!`);
+      }
+    });
   }
 
-  const addData = () => {
-    signInWithEmailAndPassword(auth, data.email, data.password)
-    history.push('/Home')
+  const handleInputs = (event) => {
+    event.preventDefault();
+
+    let inputs = { [event.target.name]: event.target.value };
+
+    setData({ ...data, ...inputs });
+  }
+
+  const addData = (event) => {
+    event.preventDefault();
+
+    // signInWithEmailAndPassword(auth, data.email, data.password);
+    
+    checkUserLogin(data);
+    if (userLogin) {
+      set(ref(database, '/Admin/'), {
+        currentUserId: userId
+      });
+      history.push('/Home');
+      window.location.reload();
+    }
   }
 
   useEffect(() => {
     onAuthStateChanged(auth, (data) => {
-      if(data){
+      if (data) {
         alert("Logged In")
       }
       else {
@@ -63,6 +114,11 @@ function Login() {
         <button onClick={addData}>Log In</button>
         <button class="dark-button" onClick={() => performAction()}> Sign Up </button>
       </div>
+      {errorMessage && (
+        <div>
+          <p >{errorMessage}</p>
+        </div>
+      )}
     </div>
   );
 }
