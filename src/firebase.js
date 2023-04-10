@@ -50,16 +50,16 @@ export function requestPermission() {
     if (permission === "granted") {
       console.log("Notification permission granted.");
       //access the registration token
-      getToken(messaging, {
-        vapidKey:
-          "BLfNwRYQKXcFixJOZ1ycv9mtc4l_g4tShgS6Gqdr2bSnHVrp5oiUMxeVdH9QqCB5yc1qNcRxUGhDCqNCisrQeuI",
-      }).then((currentToken) => {
-        if (currentToken) {
-          console.log("currentToken: ", currentToken);
-        } else {
-          console.log("Can't get token");
-        }
-      });
+      // getToken(messaging, {
+      //   vapidKey:
+      //     "BLfNwRYQKXcFixJOZ1ycv9mtc4l_g4tShgS6Gqdr2bSnHVrp5oiUMxeVdH9QqCB5yc1qNcRxUGhDCqNCisrQeuI",
+      // }).then((currentToken) => {
+      //   if (currentToken) {
+      //     console.log("currentToken: ", currentToken);
+      //   } else {
+      //     console.log("Can't get token");
+      //   }
+      // });
 
       onValue(ref(database, "/Users/1/StoveManagement/"), (snapshot) => {
         var data = snapshot.child("Safety").val();
@@ -83,7 +83,10 @@ function showNotification(){
     dir: 'ltr',
   };
 
-  new Notification('Alert! Stove Unsafe', options);
+  // const n = new Notification('Alert! Stove Unsafe', options);
+  alert('Alert! \nStove Unsafe')
 }
+
+requestPermission();
 
 export { auth, app, database, db};
