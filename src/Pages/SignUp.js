@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import logo from "../images/the-og-logo.png";
 import history from './History';
-import { database } from '../firebase';
+import { database, requestPermission } from '../firebase';
 import { ref, set, onValue } from "firebase/database";
 import { validateEmail } from '../utils/helpers';
+// import { requestPermission } from "../firebase";
+
 
 export default class SignUp extends Component {
   constructor(props) {
@@ -99,6 +101,13 @@ export default class SignUp extends Component {
   //   history.push('/Home');
   //   window.location.reload();
   // }
+
+  handlePermissions(){
+    if (document.getElementById("check-box").checked === true){
+      requestPermission();
+    }
+  }
+
   render() {
     return (
       <div className="App-body" >
@@ -132,7 +141,7 @@ export default class SignUp extends Component {
           value={this.state.confirmPw} onChange={this.handleconfirmPwInput}
         />
         <label class="checkbox-group">
-          <input id="check-box" type="checkbox" checked />
+          <input id="check-box" type="checkbox" onChange={this.handlePermissions} />
           Allow Notifications
         </label>
         <button class="dark-button" onClick={this.signupClick}> SignUp </button>

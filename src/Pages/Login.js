@@ -3,7 +3,7 @@ import React from "react";
 import "../App.css";
 import logo from "../images/the-og-logo.png";
 import { useEffect, useState } from 'react';
-import { auth, database } from '../firebase';
+import { auth, database, requestPermission } from '../firebase';
 import {
   signInWithEmailAndPassword,
   onAuthStateChanged

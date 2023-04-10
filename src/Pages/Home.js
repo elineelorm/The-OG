@@ -31,7 +31,7 @@ export default class Home extends Component {
         onValue(dbAdminRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                console.log(data);
+                //console.log(data);
                 this.setState({
                     userId: data.currentUserId
                 });
@@ -46,7 +46,7 @@ export default class Home extends Component {
         onValue(dbRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                console.log(data);
+                //console.log(data);
                 this.setState({
                     id: data.stoveId, safety: data.Safety, state: data.State,
                     type: data.Type
@@ -108,7 +108,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="App-body">
-                <img class="img-position" src={logo} alt="logo" />
+                <img className="img-position" src={logo} alt="logo" />
                 <div className="row">
                     <div className="col-sm-8 border-right">
                         <img className="cooking-pot" src={cookingPot} alt="cooking pot" />
@@ -129,9 +129,9 @@ export default class Home extends Component {
                     </div> */}
                     <div className="col-sm-4">
                         <form>
-                            <div class="form-group">
-                                <label for="new-email">Add Contact</label>
-                                <input type="email" class="" id="new-email" placeholder="Contact Email" value={this.state.addEmail} onChange={this.handleEmailInput} required />
+                            <div className="form-group">
+                                <label htmlFor="new-email">Add Contact</label>
+                                <input type="email" className="" id="new-email" placeholder="Contact Email" value={this.state.addEmail} onChange={this.handleEmailInput} required />
                             </div>
                             <button type="submit" onClick={this.emailSubmitClick}>Add</button>
                         </form>
@@ -140,7 +140,7 @@ export default class Home extends Component {
                                 <p>{this.state.errorMessage}</p>
                             </div>
                         )}
-                        <button class="dark-button" onClick={this.handleLogout}>Log out</button>
+                        <button className="dark-button" onClick={this.handleLogout}>Log out</button>
                     </div>
                 </div>
 
