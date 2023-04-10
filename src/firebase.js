@@ -1,13 +1,19 @@
 // Import the functions you need from the SDKs you need
+import 'firebase/auth';
+import 'firebase/database';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAnalytics } from "firebase/analytics";
-import { getMessaging, getToken } from "firebase/messaging";
+import { getToken, getMessaging } from "firebase/messaging";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, onValue } from "firebase/database";
-import { httpsCallable, getFunctions } from "firebase/functions";
+// import admin from 'firebase-admin';
 
+// const serviceAccount = require('./secret_key.json');
 
+// admin.initializeApp({
+//   credential: admin.credential.cert(serviceAccount),
+//   databaseURL: 'https://the-og-27e6f-default-rtdb.firebaseio.com'
+// });
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -25,72 +31,62 @@ const firebaseConfig = {
 // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-  const analytics = getAnalytics(app);
   const database = getDatabase(app);
   const db = getFirestore(app);
 
 
 
+// // Initialize Firebase Cloud Messaging and get a reference to the service
+ const messaging = getMessaging(app);
+
 // Initialize Firebase Cloud Messaging and get a reference to the service
-const messaging = getMessaging(app);
+//const messaging = admin.messaging();
 
 
 // Request permission for notifications
-function requestPermission() {
-    console.log("STart");
-    Notification.requestPermission().then((permission) => {
-      if (permission === "granted") {
-        console.log("Notification permission granted.");
-        //access the registration token
-        getToken(messaging, {
-          vapidKey:
-            "BLfNwRYQKXcFixJOZ1ycv9mtc4l_g4tShgS6Gqdr2bSnHVrp5oiUMxeVdH9QqCB5yc1qNcRxUGhDCqNCisrQeuI",
-        }).then((currentToken) => {
-          if (currentToken) {
-            console.log("currentToken: ", currentToken);
-          } else {
-            console.log("Can't get token");
-          }
-        });
-      } else {
-        console.log("Do not have permission!");
-      }
-    });
-  }
+export function requestPermission() {
+  console.log("STart");
+  Notification.requestPermission().then((permission) => {
+    if (permission === "granted") {
+      console.log("Notification permission granted.");
+      //access the registration token
+      // getToken(messaging, {
+      //   vapidKey:
+      //     "BLfNwRYQKXcFixJOZ1ycv9mtc4l_g4tShgS6Gqdr2bSnHVrp5oiUMxeVdH9QqCB5yc1qNcRxUGhDCqNCisrQeuI",
+      // }).then((currentToken) => {
+      //   if (currentToken) {
+      //     console.log("currentToken: ", currentToken);
+      //   } else {
+      //     console.log("Can't get token");
+      //   }
+      // });
+
+      onValue(ref(database, "/Users/1/StoveManagement/"), (snapshot) => {
+        var data = snapshot.child("Safety").val();
+        // console.log("New data added: ", data);
+        if (data === "Unsafe"){
+          console.log("Value changed to Unsafe");
+          showNotification();
+        }
+      });
+
+    } else {
+      console.log("Do not have permission!");
+    }
+  });
+}
   
-  requestPermission();
+function showNotification(){
+  var options = {
+    body: 'Notification Body',
+    icon: './images/the-og-logo.png    auto=compress&cs=tinysrgb&dpr=1&w=500',
+    dir: 'ltr',
+  };
 
+  // const n = new Notification('Alert! Stove Unsafe', options);
+  alert('Alert! \nStove Unsafe')
+}
 
-  // Set up a listener for new values added to the database
-onValue(ref(database, "/test"), (snapshot) => {
-  const data = snapshot.val();
-  console.log("New notification added: ", data);
-
-  // Send the notification
-  // const sendNotification = firebase.functions().httpsCallable("sendNotification");
-  const sendNotification = httpsCallable(getFunctions(), "sendNotification");
-  // sendNotification({ message: data.message })
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((error) => {
-  //     console.error(error);
-  //   });
-     sendNotification({})
-     console.log("test");
-    // sendNotification({ message: data.message })
-    // .then((result) => {
-    //   console.log(result);
-    //   // Show the notification
-    //   const notificationOptions = {
-    //     body: data.message,
-    //     icon: "<PATH_TO_ICON_FILE>"
-    //   };
-    //   new Notification("New message", notificationOptions);
-    // })
-    // .catch((error) => {
-    //   console.error(error);
-    // });
-});
+requestPermission();
 
 export { auth, app, database, db};
