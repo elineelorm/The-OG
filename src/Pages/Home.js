@@ -7,6 +7,7 @@ import history from './History';
 // import { Button } from 'react-bootstrap';
 import { ref, set, get, update, remove, child, onValue } from "firebase/database";
 import { validateEmail } from '../utils/helpers';
+import emailjs from 'emailjs-com';
 
 export default class Home extends Component {
     constructor(props) {
@@ -20,7 +21,8 @@ export default class Home extends Component {
             contactId: 1,
             errorMessage: '',
             userId: 1,
-            dataMessage: ''
+            dataMessage: '',
+            addEmailForMail: ''
 
         }
         this.handleEmailInput = this.handleEmailInput.bind(this);
@@ -39,8 +41,8 @@ export default class Home extends Component {
             else {
                 console.log("No current user");
             }
-        }) 
-        
+        })
+
         const dbRef = ref(database, '/Users/' + this.state.userId + '/StoveManagement/');
         console.log(this.state.userId);
         onValue(dbRef, (snapshot) => {
@@ -76,6 +78,16 @@ export default class Home extends Component {
                 });
             }
         })
+    } 
+    emailContact(e) {
+        e.preventDefault();   
+
+        emailjs.sendForm('service_ntpnojl', 'template_uwijy5q', 'myFrom', 'LG6yO4Oifs6VtQOGi')
+            .then((result) => {
+                //   window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+            }, (error) => {
+                console.log(error.text);
+            });
     }
     emailSubmitClick = (event) => {
         event.preventDefault();
@@ -90,12 +102,46 @@ export default class Home extends Component {
             this.setState({
                 contactId: Number(this.state.contactId) + 1
             });
+
+            // emailContact(event);
             this.setState({ addEmail: '' });
         }
     }
+    // onValue(ref(database, "/Users/1/Contact/"), (snapshot) => {
+    //   var data = snapshot.val();
+    //   console.log("Contact data: ", data);
+
+
+    // let transport = nodemailer.createTransport({
+    //   host: 'smtp.ethereal.email',
+    //   port: 2525,secure: false,
+    //   auth: {
+    //     user: "c4e0ec0c59cb56",
+    //     pass: "312363c9cc1775"
+    //   }
+    // });
+
+    // var mailOptions = {
+    //   from: 'theog@mailtrap.io',
+    //   to: "contactUser@gmail.com",
+    //   subject: 'The OG -- STOVE UNSAFE',
+    //   html: '<h2 style="color:#0000ff;">STOVE UNSAFE, Stove Id: 1' +
+    //     '. PLEASE CHECK ON THE STOVE. -- THE-OG</h2><h2>-- THE-OG</h2>'
+    // };
+
+    // transport.sendMail(mailOptions, function (error, info) {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log('Email sent: ' + info.response);
+    //   }
+    // });
+    // }
     handleEmailInput(event) {
         this.setState({ addEmail: event.target.value });
+        this.setState({ addEmailForMail: event.target.value });
         console.log(this.state.addEmail);
+
     }
     handleLogout() {
         // signOut(auth);
@@ -128,12 +174,13 @@ export default class Home extends Component {
                         <div className="vr"></div>
                     </div> */}
                     <div className="col-sm-4">
-                        <form>
+                        <form onSubmit={emailContact} id='myFrom'>
                             <div className="form-group">
                                 <label htmlFor="new-email">Add Contact</label>
                                 <input type="email" className="" id="new-email" placeholder="Contact Email" value={this.state.addEmail} onChange={this.handleEmailInput} required />
                             </div>
-                            <button type="submit" onClick={this.emailSubmitClick}>Add</button>
+                            {/* onClick={this.emailSubmitClick} */}
+                            <button type="submit" >Add</button>
                         </form>
                         {this.state.errorMessage && (
                             <div>

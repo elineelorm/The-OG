@@ -7,6 +7,8 @@ import { getToken, getMessaging } from "firebase/messaging";
 import { getAuth } from "firebase/auth";
 import { getDatabase, ref, onValue } from "firebase/database";
 // import admin from 'firebase-admin';
+// import nodemailer from 'nodemailer';
+import emailjs from 'emailjs-com';
 
 // const serviceAccount = require('./secret_key.json');
 
@@ -29,15 +31,15 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const database = getDatabase(app);
-  const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
+const db = getFirestore(app);
 
 
 
 // // Initialize Firebase Cloud Messaging and get a reference to the service
- const messaging = getMessaging(app);
+const messaging = getMessaging(app);
 
 // Initialize Firebase Cloud Messaging and get a reference to the service
 //const messaging = admin.messaging();
@@ -64,7 +66,7 @@ export function requestPermission() {
       onValue(ref(database, "/Users/1/StoveManagement/"), (snapshot) => {
         var data = snapshot.child("Safety").val();
         // console.log("New data added: ", data);
-        if (data === "Unsafe"){
+        if (data === "Unsafe") {
           console.log("Value changed to Unsafe");
           showNotification();
         }
@@ -75,8 +77,47 @@ export function requestPermission() {
     }
   });
 }
-  
-function showNotification(){
+function emailContact() {
+  // e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+
+  // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID')
+  //   .then((result) => {
+  //       window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+  //   }, (error) => {
+  //       console.log(error.text);
+  //   });
+  // onValue(ref(database, "/Users/1/Contact/"), (snapshot) => {
+  //   var data = snapshot.val();
+  //   console.log("Contact data: ", data);
+
+
+    // let transport = nodemailer.createTransport({
+    //   host: 'smtp.ethereal.email',
+    //   port: 2525,secure: false,
+    //   auth: {
+    //     user: "c4e0ec0c59cb56",
+    //     pass: "312363c9cc1775"
+    //   }
+    // });
+
+    // var mailOptions = {
+    //   from: 'theog@mailtrap.io',
+    //   to: "contactUser@gmail.com",
+    //   subject: 'The OG -- STOVE UNSAFE',
+    //   html: '<h2 style="color:#0000ff;">STOVE UNSAFE, Stove Id: 1' +
+    //     '. PLEASE CHECK ON THE STOVE. -- THE-OG</h2><h2>-- THE-OG</h2>'
+    // };
+
+    // transport.sendMail(mailOptions, function (error, info) {
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log('Email sent: ' + info.response);
+    //   }
+    // });
+}
+
+function showNotification() {
   var options = {
     body: 'Notification Body',
     icon: './images/the-og-logo.png    auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -85,8 +126,10 @@ function showNotification(){
 
   // const n = new Notification('Alert! Stove Unsafe', options);
   alert('Alert! \nStove Unsafe')
+  // emailContact()
+
 }
 
 requestPermission();
 
-export { auth, app, database, db};
+export { auth, app, database, db };
